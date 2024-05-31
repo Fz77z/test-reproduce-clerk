@@ -127,7 +127,7 @@ const getTagColor = (tag: string) => {
   }
 };
 
-const Dashboard = () => {
+const Modpacks = () => {
   const [modpacks, setModpacks] = useState<Modpack[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(18);
@@ -288,4 +288,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Modpacks;
