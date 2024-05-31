@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ClerkProvider {...pageProps}>
       <div className="mx-auto max-w-7xl p-4">
-        <Component {...pageProps} />
         <Navbar />
+        <Component {...pageProps} />
       </div>
     </ClerkProvider>
   );
