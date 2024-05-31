@@ -1,19 +1,32 @@
-import { type AppType } from "next/app";
-import { ClerkProvider } from "@clerk/nextjs";
-import Navbar from "../components/Navbar";
 import "../styles/globals.css";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
+import type { AppProps } from "next/app";
+import Navbar from "../components/Navbar";
 
-const MyApp: AppType = ({ Component, pageProps }) => {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ClerkProvider {...pageProps}>
-      <main>
-        <div className="mx-auto max-w-7xl p-4">
-          <Navbar />
-          <Component {...pageProps} />
-        </div>
-      </main>
+      <div>
+        <Navbar />
+      </div>
+      <header>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton afterSignOutUrl="/" />
+        </SignedIn>
+      </header>
+
+      <Component {...pageProps} />
     </ClerkProvider>
   );
-};
+}
 
 export default MyApp;

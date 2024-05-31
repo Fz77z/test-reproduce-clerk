@@ -8,7 +8,7 @@ const Navbar = () => {
   const { user, isLoaded } = useUser();
   return (
     <nav className="flex items-center justify-between rounded-lg bg-gray-800 p-4 text-white">
-      <Link href="/modpacks">
+      <Link href="/dashboard">
         <div className="flex items-center space-x-2">
           {" "}
           <img
